@@ -75,7 +75,7 @@ p.blue_text__block {
 	position: relative;
 }
 .box_content__block i.fa {
-	background: #6cbe03;
+	background: red;
 	border-radius: 5px;
 	font-size: 20px;
 	height: 60px;
@@ -112,7 +112,7 @@ p.blue_text__block {
 	transition: all 0.4s linear 0s;
 }
 .hover-bg:hover {
-	background: #6cbe03;
+	background: red;
 }
 .fl {
 	float: left;
@@ -161,7 +161,7 @@ p.blue_text__block {
 	padding: 17px 0;
 }
 .box-hover:hover .team-block {
-	background: #6cbe03;
+	background: red;
 }
 .box-hover:hover * {
 	color: #fff;

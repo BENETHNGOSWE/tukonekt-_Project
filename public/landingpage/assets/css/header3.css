@@ -119,7 +119,7 @@
 	display: block;
 	float: none;
 	margin: 0;
-	border-bottom:1px solid #6cbe03;
+	border-bottom:1px solid red;
 	padding-bottom: 0;
 	position: relative;
 }
@@ -269,7 +269,7 @@
 	    transition: all .3s ease;
 }
 .header_bg .top-bar-section .top-social-icon .icons-hover-black a:hover, .header_bg .top_loction ul li a:hover{
-	color:#6cbe03;
+	color:red;
 }
 /*  Header style 2   ||-----------*/
 .header-2 .primary-header {
@@ -460,8 +460,8 @@
 	height: 0;
 	/* border-right-color: transparent; */
 	/* border-top-color: transparent; */
-	/* border-bottom-color:#6cbe03; */
-	/* border-left-color:#6cbe03; */
+	/* border-bottom-color:red; */
+	/* border-left-color:red; */
 	/* border-style: solid; */
 	/* border-top-width: 46px; */
 	/* border-right-width: 34px; */
@@ -470,14 +470,14 @@
 	margin-left: -375px;
 	height: 100%;
 	width: 70px;
-	background: #6cbe03;
+	background: red;
 	transform: skewX(24deg);
 }
 .header_bg .reletiv_box:before {
 	content: '';
 	width: 50%;
 	height: 100%;
-	background:#6cbe03;
+	background:red;
 	position: absolute;
 	top: 0;
 	left: -338px;
@@ -488,7 +488,7 @@
 .header-1 .navigation > ul > li > a.active,
 .header-1 .navigation > ul > li:hover > a{
 	color:#222;
-	background: #6cbe03;
+	background: red;
 }
 .header-1 .stricky .navigation > ul > li > a{
 	padding: 20px 16px;
@@ -650,7 +650,7 @@ min-width:160px;
 		top: 0;
 		width: 100%;
 		z-index: 9;
-		background:#6cbe03;
+		background:red;
 	}
 	.header-1 .navigation {
 		top: 1px;
@@ -667,7 +667,7 @@ min-width:160px;
 	}
 	.header-1 .navigation > ul > li > a.active, .header-1 .navigation > ul > li:hover > a {
     color: #fff;
-    background:#6cbe03;
+    background:red;
 }
 	.navigation .sub-nav li a{
 		color:#fff;

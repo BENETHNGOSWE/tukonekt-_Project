@@ -625,7 +625,7 @@ ul.menu-col li a:hover, ul.menu-col li a:focus {
 	position: relative;
 }
 .top-part__block:after {
-	background: #6cbe03;
+	background: red;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -637,7 +637,7 @@ ul.menu-col li a:hover, ul.menu-col li a:focus {
 .top-part__block:before {
 
 	content: "";
-	background: #6cbe03;
+	background: red;
 	transform: skewX(-30deg);
 	-webkit-transform: skewX(-30deg);
 	height: 100%;
@@ -694,7 +694,7 @@ ul.menu-col li a:hover, ul.menu-col li a:focus {
 }
 
 .top-info__block li i {
-	color: #6cbe03;
+	color: red;
 	font-size: 40px;
 	height: 50px;
 	left: 0;
@@ -858,7 +858,7 @@ nav.navbar.bootsnav ul.nav > li > a {
 }
 
 nav.navbar.bootsnav ul.nav > li > a.custom-btn {
-	background: #6cbe03;
+	background: red;
 	color: #fff;
 	margin-top: 11px;
 	padding: 10px 35px;
@@ -940,7 +940,7 @@ nav.navbar.bootsnav ul.nav > li > a.custom-btn {
 		padding: 0
 	}
 	.main_nav ul ul li {
-		background: #6cbe03;
+		background: red;
 		border-bottom: 1px solid #0874af;
 	}
 	.main_nav ul ul li a {

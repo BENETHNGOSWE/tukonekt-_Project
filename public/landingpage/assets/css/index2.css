@@ -25,7 +25,7 @@
 	padding: 10px 0;
 }
 .main-banner .banner-text h2 span {
-	color: #6cbe03;
+	color: red;
 }
 .main-banner .banner-text p {
 	font-family: "Poppins", sans-serif;
@@ -40,7 +40,7 @@
 	height: auto;
 }
 .main-banner .more-btn {
-	background: #6cbe03;
+	background: red;
 	line-height: 30px;
 	padding-left: 38px;
 	padding-right: 38px;
@@ -221,7 +221,7 @@
 	right: 0;
 	width: 200px;
 	height: 200px;
-	background: #6cbe03;
+	background: red;
 	transition: all 0.5s ease;
 	padding: 24px 15px;
 	margin: auto;
@@ -292,7 +292,7 @@
 	font-weight: 700;
 }
 .top-service:hover, .top-service.active {
-	background-color: #6cbe03;
+	background-color: red;
 	color: #fff;
 }
 
@@ -310,13 +310,13 @@
 	}
 }
 .white_btn {
-	border: 1px solid #6cbe03;
-	color:#6cbe03;
+	border: 1px solid red;
+	color:red;
 }
 .white_btn:hover {
 	color: #fff;
-	border-color:#6cbe03;
-	background:#6cbe03;
+	border-color:red;
+	background:red;
 }
 
 /*====================================================================
@@ -350,7 +350,7 @@
 	background: #ffffff;
 }
 .icon_down:hover {
-	box-shadow: inset 0px 0px 0px 4px #6cbe03;
+	box-shadow: inset 0px 0px 0px 4px red;
 }
 .icon_down .icon-container .icon_bigger {
 	background: transparent !important;
@@ -370,7 +370,7 @@
 	padding: 18px 0px;
 	right: -73px;
 	top: 72px;
-	background:#6cbe03;
+	background:red;
 	color: #fff;
 	text-align: center;
 }
@@ -427,13 +427,13 @@
 	font-weight: 800;
 }
 .latest__block-title:hover a {
-	color: #6cbe03;
+	color: red;
 }
 .team__block-section .team-member {
 	margin-bottom: 0;
 }
 .more_btn__block {
-	color: #6cbe03;
+	color: red;
 	font-weight: bold;
 	display: inline-block;
 	margin-top: 30px;
@@ -555,7 +555,7 @@
 	position: relative;
 	overflow: hidden;
 	display: block;
-	border: 1px solid #6cbe03;
+	border: 1px solid red;
 }
 .item-box img {
 	width: 100%;
@@ -568,7 +568,7 @@
 	color: #fff;
 }
 .gallery-heading h4 a:hover {
-	color: #6cbe03;
+	color: red;
 }
 .gallery-heading {
 	transition: all 0.2s linear 0s;
@@ -661,7 +661,7 @@
 	width: 70px;
 	height: 70px;
 	font-size: 45px;
-	color: #6cbe03;
+	color: red;
 	text-align: center;
 	line-height: 74px;
 	margin: 0 auto;

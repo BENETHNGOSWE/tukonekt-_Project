@@ -19,7 +19,7 @@
 	bottom: 0px;
 	padding: 100px;
 	width: 50%;
-	background: #6cbe03;
+	background: red;
 	color: #fff;
 }
 .banner_content .btn-text {
@@ -83,7 +83,7 @@
 	left: 0px;
 	bottom: 0px;
 	width: 70px;
-	border-bottom: 5px solid #6cbe03;
+	border-bottom: 5px solid red;
 }
 .center_bdr h2:before, .center_bdr h2:after{
 left: 50%;
@@ -173,7 +173,7 @@ transform: translateX(-50%);
 	font-size: 35px;
 	z-index: 1;
 	text-align: center;
-	background-color: #6cbe03;
+	background-color: red;
 	margin: 0px;
 	border-radius: 0px;
 	transform: inherit;
@@ -197,13 +197,13 @@ transform: translateX(-50%);
 }
 
 .services-block .inner-box .image .overlay-box .read-more:hover {
-	color: #6cbe03;
+	color: red;
 }
 
 .services-block .inner-box .lower-box {
 	position: relative;
 	padding: 10px 0px;
-	border-bottom: 1px solid #6cbe03;
+	border-bottom: 1px solid red;
 }
 
 .services-block .inner-box .lower-box h3 {
@@ -224,7 +224,7 @@ transform: translateX(-50%);
 }
 
 .services-block .inner-box .lower-box a:hover {
-	color: #6cbe03;
+	color: red;
 }
 
 /*Porject*/
@@ -389,7 +389,7 @@ transform: translateX(-50%);
 	margin: 0px;
 }
 .bg_yellow {
-	background: #6cbe03;
+	background: red;
 	color: #fff;
 }
 
@@ -431,13 +431,13 @@ transform: translateX(-50%);
 	font-weight: 800;
 }
 .latest__block-title:hover a {
-	color:#6cbe03;
+	color:red;
 }
 .team__block-section .team-member {
 	margin-bottom: 0;
 }
 .more_btn__block {
-	color:#6cbe03;
+	color:red;
 	font-weight: bold;
 	display: inline-block;
 	margin-top: 30px;
@@ -552,7 +552,7 @@ transform: translateX(-50%);
 
 /*Team*/
 figure.effect-zoe figcaption {
-	background: #6cbe03;
+	background: red;
 }
 figure.effect-zoe p.description {
 	background: rgba(232, 162, 13, 0.68);
@@ -666,7 +666,7 @@ figure.effect-zoe p.description {
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 	-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
-	background:#6cbe03;
+	background:red;
 	left: 0;
 }
 figure.effect-zoe .name-block, figure.effect-zoe p.icon-links a {
@@ -789,7 +789,7 @@ figure.effect-zoe:hover p.icon-links a:first-child {
 	position: relative;
 	overflow: hidden;
 	display: block;
-	border: 1px solid #6cbe03;
+	border: 1px solid red;
 }
 .item-box img {
 	width: 100%;
@@ -924,7 +924,7 @@ figure.effect-zoe:hover p.icon-links a:first-child {
 	color:#fff !important;
 }
 .bg_btn{
-	background:#6cbe03 !important;
+	background:red !important;
 }
 .bg_btn:before{
 	background: #222;
@@ -963,7 +963,7 @@ figure.effect-zoe:hover p.icon-links a:first-child {
 	width: 70px;
 	height: 70px;
 	font-size: 45px;
-	color:#6cbe03;
+	color:red;
 	text-align: center;
 	line-height: 74px;
 	margin: 0 auto;

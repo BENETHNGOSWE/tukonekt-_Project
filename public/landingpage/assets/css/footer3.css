@@ -50,7 +50,7 @@
 	transition: all 0.2s;
 }
 .footer .link a:hover{
-	color:#6cbe03;
+	color:red;
 }
 .footer h5 {
 	color: #f0eded;
@@ -89,7 +89,7 @@
 	transition: all 0.2s linear;
 }
 .footer .icons-hover-black i:hover{
-	background: #6cbe03;
+	background: red;
 }
 .footer .blog-link img {
 	width: 60px;
@@ -191,7 +191,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #6cbe03;
+	background: red;
 	transform: rotate(23deg);
 	transform-origin: 100% 0;
 }
@@ -260,7 +260,7 @@ position: absolute;
     top: 0px;
     right: 0px;
     font-size: 18px;
-    background: #6cbe03;
+    background: red;
     border-radius: 0;
     width: 49px;
     height: 49px;
