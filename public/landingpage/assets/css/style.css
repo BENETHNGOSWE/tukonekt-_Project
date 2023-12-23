@@ -4076,13 +4076,19 @@ form .error {
 	background-color:rgba(0, 0, 0, 0.36);
 	content: '';
 }
-@media (max-width: 480px) {
+@media (max-width: 601px) {
 	.main-banner .banner-text h2 {
 		font-size: 18px;
 	}
 	.main-banner .banner-text p {
 		line-height: 1.2;
 		font-size: 15px;
+	}
+	.main-banner .tp-mask-wrap .tp-caption .banner-text h2, .main-banner .tp-mask-wrap .tp-caption .banner-text h2 span{
+		font-size:23px;
+		font-weight: 800;
+		font-family: 'Raleway', sans-serif;
+		text-transform: uppercase;
 	}
 }
 

@@ -3,6 +3,7 @@
 /*-------------------------------------------------------------------------------------------*/
 .main-banner {
 	position: relative;
+	margin-top: 5em;
 }
 .main-banner .banner-text .sub-text {
 	font-weight: 600;
