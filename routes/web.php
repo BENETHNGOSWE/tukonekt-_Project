@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/user-profile/{id}', [App\Http\Controllers\Register\RegisterController::class, 'userProfile'])->name('user.profile');
 
 
 
@@ -42,6 +43,9 @@ Route::get('get-form-builder', [FormsController::class, 'read']);
 Route::post('save-form-transaction', [FormsController::class, 'create']);
 
 Route::get('qrcode/{token}', [QRCodeController::class, 'show']);
+
+Route::get('/attendance-table', [App\Http\Controllers\Register\RegisterController::class, 'attendanceTable'])->name('attendance.table');
+
 
 Route::group(['middleware' => 'guest'], function() {
    

@@ -7,6 +7,7 @@ use App\Exports\RegisterExportView;
 use App\Http\Controllers\Controller;
 use App\Mail\QRCodeMail;
 use App\Models\Register;
+use App\Models\Attendance;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -138,6 +139,28 @@ class RegisterController extends Controller
     public function export_view(){
         return Excel::download(new RegisterExportView(), fileName:'register.xlsx');
     }
+
+
+    public function userProfile(Request $request, $id)
+    {
+        $user = Register::find($id);
+
+        if (!$user) {
+            abort(404); // or handle accordingly (e.g., redirect)
+        }
+
+        Attendance::create(['user_id' => $user->id]);
+
+        return view('frontendlayouts.registers.user_profile', compact('user'));
+    }
+
+    public function attendanceTable()
+    {
+        $attendance = Attendance::with('user')->get(); // Assuming you have a relationship defined in the Attendance model
+
+        return view('frontendlayouts.registers.attendance_table', compact('attendance'));
+    }
+
 
 
   
