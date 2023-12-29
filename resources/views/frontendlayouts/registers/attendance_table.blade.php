@@ -75,7 +75,7 @@
                                                 <td>{{ $loop->iteration}}</td>
                                                 <td>{{ $entry->first_name}}</td>
                                                 <td>{{ $entry->user->id}}</td>
-                                                <td>{{ $register->created_at}}</td>
+                                                <td>{{ $entry->created_at}}</td>
 
                                             </tr>
                                             @endforeach
