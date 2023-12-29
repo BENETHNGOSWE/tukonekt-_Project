@@ -43,8 +43,5 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function registers()
-    {
-        return $this->hasMany(Register::class);
-    }
+    
 }
