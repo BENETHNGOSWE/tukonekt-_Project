@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendances', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->timestamps();
+        Schema::table('attendances', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('registers')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -23,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attendances');
+        Schema::table('attendances', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
     }
 };
