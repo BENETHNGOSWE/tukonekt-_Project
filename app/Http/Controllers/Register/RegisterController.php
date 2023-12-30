@@ -72,7 +72,7 @@ class RegisterController extends Controller
             'city'=> $request->input('city'),
         ]);
 
-        $this->sendVerificationEmail($user);
+        // $this->sendVerificationEmail($user);
 
         $this->sendQRCodeEmail($user);
 
@@ -81,10 +81,10 @@ class RegisterController extends Controller
 
 
     
-    protected function sendVerificationEmail($user)
-    {
-        Mail::to($user->email)->send(new \App\Mail\VerificationMail($user));
-    }
+    // protected function sendVerificationEmail($user)
+    // {
+    //     Mail::to($user->email)->send(new \App\Mail\VerificationMail($user));
+    // }
 
     protected function sendQRCodeEmail($user)
     {

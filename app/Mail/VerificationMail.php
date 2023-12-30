@@ -13,15 +13,15 @@ class VerificationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
+    // public $user;
 
-    public function __construct($user)
-    {
-        $this->user = $user;
-    }
+    // public function __construct($user)
+    // {
+    //     $this->user = $user;
+    // }
 
-    public function build()
-    {
-        return $this->view('emails.verify');
-    }
+    // public function build()
+    // {
+    //     return $this->view('emails.verify');
+    // }
 }

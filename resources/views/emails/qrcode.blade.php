@@ -27,7 +27,8 @@
                                             <tbody>
                                                 <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                                     <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                                        Download Your Qrcode below here and never share to anyone it's Yours.
+                                                    Your personalized QR Code awaits, ensuring seamless access. This will serve as a ticket throughout the event.<br>
+                                                    Download Your Qrcode below here and never share to anyone it's Yours.
                                                     </td>
                                                 </tr>
                                                 <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
@@ -37,7 +38,7 @@
                                                 </tr>
                                                 <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                                     <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                                        Thanks for choosing us
+                                                        Thanks for choosing us 
                                                     </td>
                                                 </tr>
                                             </tbody>
