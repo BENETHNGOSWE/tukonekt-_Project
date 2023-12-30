@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Attendance;
 use App\Models\Register;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -40,6 +41,7 @@ class DashboardController extends Controller
         $this->data['female_count'] = Register::where('gender', 'female')->count();
         $this->data['male_count'] = Register::where('gender', 'male')->count();
         $this->data['total_number'] = Register::all()->count();
+        $this->data['total_number_attendance'] = Attendance::all()->count();
         if ($this->data['total_number'] > 0) {
             $this->data['female_percentage'] = ($this->data['female_count'] / $this->data['total_number']) * 100;
             $this->data['male_percentage'] = ($this->data['male_count'] / $this->data['total_number']) * 100;

@@ -2,8 +2,8 @@
     <!-- navbar -->
     <div class="navbar-custom navbar navbar-expand-lg">
         <div class="container-fluid px-0">
-            <a class="navbar-brand d-block d-md-none" href="index.html">
-                <img src="backend/assets/images/brand/logo/logo-2.svg" alt="Image">
+            <a class="navbar-brand d-block d-md-none" href="#">
+                <h2>TUKONEKT</h2>
             </a>
 
 

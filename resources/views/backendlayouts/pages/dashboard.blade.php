@@ -2,9 +2,12 @@
 @section('content')
 <main id="main-wrapper" class="main-wrapper">
 
-    <div id="app-content" style="margin-right: 1em">
+    @include('backendlayouts.sidebar')
+    <!-- Page content -->
+    <div id="app-content">
 
         <!-- Container fluid -->
+
 
         <div class="app-content-area">
             <div class="bg-primary pt-10 pb-21 mt-n6 mx-n4"></div>
@@ -17,13 +20,13 @@
                                 <h3 class="mb-0  text-white">Dashboard</h3>
                             </div>
                             <div>
-                                <a href="#!" class="btn btn-white">Create New Project</a>
+                                <a href="{{ URL('formbuilder')}}" class="btn btn-white">Create New Project</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
+                <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
                         <!-- card -->
                         <div class="card h-100 card-lift">
                             <!-- card body -->
@@ -31,19 +34,20 @@
                                 <!-- heading -->
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <div>
-                                        <h4 class="mb-0">Total Registerd</h4>
+                                        <h4 class="mb-0">Total People</h4>
                                     </div>
                                     <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
-                                        <i data-feather="briefcase" height="20" width="20"></i>
+                                        <i data-feather="target" height="20" width="20"></i>
                                     </div>
                                 </div>
                                 <!-- project number -->
                                 <div class="lh-1">
-                                    <h1 class=" mb-1 fw-bold">{{ $total_number }}</h1>
-                                    <p class="mb-0"><span class="text-dark me-2"></span>All people</p>
+                                    <h3 class="mb-1 fw-bold">TOTAL REG: {{ $total_number }}</h2>
+                                    <h3 class="mb-1 fw-bold">TOTAL ATTENDERS: {{ $total_number_attendance}}</h3>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
                         <!-- card -->
@@ -51,8 +55,7 @@
                             <!-- card body -->
                             <div class="card-body">
                                 <!-- heading -->
-                                <div class="d-flex justify-content-between align-items-center
-        mb-3">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
                                     <div>
                                         <h4 class="mb-0">Male Registered</h4>
                                     </div>
@@ -224,10 +227,10 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                    <div>
-                                        <canvas id="genderChart" width="400" height="200"></canvas>
-                                    </div>
+                                <div>
+                                    <canvas id="genderChart" width="400" height="200"></canvas>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -272,7 +275,7 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         var genderDistribution = @json($gender_distribution);
 
         var ctx = document.getElementById('genderChart').getContext('2d');

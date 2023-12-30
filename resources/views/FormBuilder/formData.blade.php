@@ -1,9 +1,8 @@
-
-
 @extends('backendlayouts.main')
 @section('content')
 <main id="main-wrapper" class="main-wrapper">
 
+@include('backendlayouts.sidebar')
     <div id="app-content" style="margin-right: 1em">
 
         <!-- Container fluid -->
