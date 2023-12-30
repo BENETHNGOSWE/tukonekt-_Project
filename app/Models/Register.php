@@ -12,7 +12,6 @@ class Register extends Model
         'first_name',
         'middlename',
         'last_name',
-        'country_of_nationality',
         'email',
         'address_line_2',
         'city',

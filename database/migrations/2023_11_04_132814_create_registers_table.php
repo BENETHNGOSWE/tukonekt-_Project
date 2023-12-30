@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('middlename')->nullable();
             $table->string('last_name');
-            $table->string('country_of_nationality');
             $table->string('email')->unique();
             $table->string('address_line_2')->nullable();
             $table->string('city');
