@@ -35,7 +35,7 @@
 
 <!-- Theme CSS -->
 <link rel="stylesheet" href="{{ asset ('backend/assets/css/theme.min.css')}}">
-    <title>Evalution Dashboard</title>
+    <title>Tukonekt Dashboard</title>
 </head>
 
 <body>

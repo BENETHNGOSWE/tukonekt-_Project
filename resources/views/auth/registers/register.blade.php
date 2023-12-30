@@ -13,7 +13,6 @@
             height: 100vh;
             min-height: 550px;
             background-color: #9E9E9E;
-            /* background-image: url(http://www.planwallpaper.com/static/images/Free-Wallpaper-Nature-Scenes.jpg); */
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -183,11 +182,23 @@
             text-decoration: none;
             color: #2c7715;
         }
+        @media screen and (max-width: 600px) {
+            .white-panel {
+                width: 22em;
+                text-align: center;
+            }
+
+            .login-reg-panel {
+                width: 50em;
+                position: absolute;
+                top: 100%;
+            }
+
+        }
     </style>
 </head>
 
 <body>
-    <!-- Your HTML code goes here -->
     <div class="login-reg-panel">
         <div class="login-info-box" style="color: white;">
             <h2>Have an account?</h2>
@@ -210,17 +221,17 @@
                 <input type="submit" value="Login">
                 <a href="">Forgot password?</a>
             </form>
-                @if(Session::has('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ Session::get('success') }}
-                        </div>
-                @endif
-            <!-- <form class="register-show" method="post"> -->
-            <form class="register-show" action="{{ route('register.registers')}}" method="post">    
+            @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('success') }}
+            </div>
+            @endif
+            <form class="register-show" action="{{ route('register.registers')}}" method="post">
                 <h2>REGISTER</h2>
                 @csrf
                 <input type="text" name="name" id="name" placeholder="Name">
                 <input type="text" name="email" id="email" placeholder="Email">
+                <input type="password" name="password" id="password" placeholder="Password">
                 <input type="password" name="password" id="password" placeholder="Password">
                 <input type="submit" value="Register">
             </form>
@@ -230,7 +241,6 @@
 
     <script>
         $(document).ready(function() {
-            /* Your JavaScript code goes here */
 
             $(document).ready(function() {
                 $('.login-info-box').fadeOut();

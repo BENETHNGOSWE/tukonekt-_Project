@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('head')
-    <title>Example formBuilder</title>
+    <title>Tukonekt Dashboard</title>
 @endsection
 
 @section('content')

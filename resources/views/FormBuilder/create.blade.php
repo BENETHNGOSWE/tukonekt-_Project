@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('head')
-    <title>Evaluation Dashboard</title>
+    <title>Tukonekt Dashboard</title>
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-<br>        
+<br>       
 @endsection
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>

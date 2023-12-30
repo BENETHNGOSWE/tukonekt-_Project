@@ -15,7 +15,6 @@
 					<div class="col-md-9 nav-bg">
 						<nav class="navigation">
 							<ul>
-								<li><a class="active " href="{{ route('home')}}">Home</a></li>
 								@if(!$forms->isEmpty())
 								<li><a href="{{ URL('read-form-builder', $forms[0]->id) }}">Register</a></li>
 								@else

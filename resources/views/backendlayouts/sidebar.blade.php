@@ -51,6 +51,13 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link  " href="{{ route('attendance.table')}}">
+
+                    <i data-feather="folder-plus" class="nav-icon me-2 icon-xxs"> </i>Attendance Data
+                </a>
+            </li>
+
             
             <!-- Nav item -->
 
