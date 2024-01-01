@@ -65,6 +65,14 @@ class DashboardController extends Controller
         ];
     
         $this->data['gender_distribution'] = $genderDistribution;
+
+        $user_attendance_ratio_json = [
+            'register' => $this->data['total_number'],
+            'attenders' => $this->data['total_number_attendance'],
+        ];
+    
+        $this->data['user_attendance_ratio'] = $user_attendance_ratio_json;
+
         return view("backendlayouts.pages.dashboard", $this->data);
     }
 

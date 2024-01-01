@@ -156,25 +156,27 @@
                                 <div>
                                     <h4 class="mb-0">Gender Ratio </h4>
                                 </div>
-
-                                <!-- dropdown  -->
-                                <div class="dropdown dropstart">
-                                    <a class="btn btn-icon btn-ghost btn-sm rounded-circle" href="#!" role="button" id="dropdownTask" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="icon-xs" data-feather="more-vertical"></i>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownTask">
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">Action</a>
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">Another
-                                            action</a>
-                                        <a class="dropdown-item d-flex align-items-center" href="#!">Something
-                                            else
-                                            here</a>
-                                    </div>
-                                </div>
                             </div>
                             <div class="card-body">
                                 <div>
                                     <canvas id="genderChart" width="400" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-12 col-md-12 col-12 mb-5 ">
+                        <!-- card  -->
+                        <div class="card h-80">
+                            <!-- card body  -->
+                            <div class="card-header d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h4 class="mb-0">Gender Ratio </h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <canvas id="user_attendance_ratio_json" width="400" height="200"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -235,6 +237,32 @@
                         'rgba(54, 162, 235, 0.7)', // Male
                         'rgba(255, 99, 132, 0.7)', // Female
                         'rgba(255, 206, 86, 0.7)', // Other
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var user_attendance_ratio_json = @json($user_attendance_ratio);
+
+        var ctx = document.getElementById('attenderschart').getContext('2d');
+        var attenderschart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(user_attendance_ratio_json),
+                datasets: [{
+                    data: Object.values(user_attendance_ratio_json),
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.7)', // Male
+                        'rgba(255, 99, 132, 0.7)', 
                     ],
                     borderWidth: 1
                 }]
