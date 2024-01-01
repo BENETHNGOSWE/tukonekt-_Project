@@ -176,7 +176,7 @@
                             </div>
                             <div class="card-body">
                                 <div>
-                                    <canvas id="user_attendance_ratio_json" width="400" height="200"></canvas>
+                                    <canvas id="attenderschart" width="400" height="200"></canvas>
                                 </div>
                             </div>
                         </div>
