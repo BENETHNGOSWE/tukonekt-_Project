@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Models\User;
+
 use Throwable;
 use Illuminate\Support\Facades\Log;
 
@@ -37,6 +39,14 @@ class RegisterController extends Controller
     }
 
     public function pdf_generate_attendance(){
+
+        foreach ($this->data['attendances'] as $attendance) {
+            // Access the related User model
+            $user = User::find($attendance->user_id);
+    
+            // Add a modified_id to the data with the prefix "PR-"
+            $attendance->modified_id = "PR-" . $user->id;
+        }
         $pdf = Pdf::loadView('frontendlayouts.registers.attendancepdf', $this->data);
         return $pdf->download('attendance.pdf');
     }
@@ -167,7 +177,7 @@ class RegisterController extends Controller
         $attendance->each(function ($entry) {
             $entry->user->modified_id = "PR-" . $entry->user->id;
         });
-        
+
         return view('frontendlayouts.registers.attendance_table', compact('attendance'));
     }
 
