@@ -26,8 +26,8 @@
             <thead class="table-dark">
                 <tr>
                     <th>S/n</th>
-                    <th>First Name</th>
-                    <th>Phone Number</th>
+                    <th>User Name	</th>
+                    <th>User ID</th>
                     <th>Time Scanned</th>
                 </tr>
             </thead>
@@ -35,8 +35,8 @@
                 @foreach ($attendances as $attendance)
                     <tr>
                         <td>{{ $loop->iteration}}</td>
-                        <td>{{ $attendance->first_name}}</td>
-                        <td>{{ $attendance->id}}</td>
+                        <td>{{ $attendance->user->first_name}}</td>
+                        <td>{{ $attendance->user->modified_id}}</td>
                         <td>{{ $attendance->created_at}}</td>
                     </tr>
                 @endforeach

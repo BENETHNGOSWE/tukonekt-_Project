@@ -72,8 +72,8 @@
                                         <thead class="table-light">
                                             <tr>
                                                 <th>S/n</th>
-                                                <th>User ID</th>
                                                 <th>User Name</th>
+                                                <th>User ID</th>
                                                 <th>Attendance Time</th>
                                             </tr>
                                         </thead>
