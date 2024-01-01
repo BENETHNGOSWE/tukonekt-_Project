@@ -156,6 +156,7 @@ class RegisterController extends Controller
         }
 
         Attendance::create(['user_id' => $user->id]);
+        $user->modified_id = "PR-" . $user->id;
 
         return view('frontendlayouts.registers.user_profile', compact('user'));
     }

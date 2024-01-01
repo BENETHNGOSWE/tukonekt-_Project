@@ -7,11 +7,11 @@ function qrcode($format = "png", $id)
     $url = route('user.profile', ['id' => $user->id]); 
 
     $qrCode = QrCode::size(100)->generate(
-        'First Name: ' . $user->first_name . "\n" .
-        'Last Name: ' . $user->last_name . "\n" .
-        'Phone: ' . $user->phone_number . "\n" .
-        'Gender: ' . $user->gender . "\n".
-        'Date of entry: ' . $user->created_at->format('d-m-Y') . "\n".
+        // 'First Name: ' . $user->first_name . "\n" .
+        // 'Last Name: ' . $user->last_name . "\n" .
+        // 'Phone: ' . $user->phone_number . "\n" .
+        // 'Gender: ' . $user->gender . "\n".
+        // 'Date of entry: ' . $user->created_at->format('d-m-Y') . "\n".
         'URL: ' . $url
     );
 

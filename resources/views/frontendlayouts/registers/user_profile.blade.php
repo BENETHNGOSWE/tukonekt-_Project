@@ -11,7 +11,7 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">ID</th>
-                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->modified_id }}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">First Name</th>
