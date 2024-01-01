@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{ $loop->iteration}}</td>
                         <td>{{ $attendance->user->first_name}}</td>
-                        <td>{{ $attendance->id}}</td>
+                        <td>PR-{{ $attendance->id}}</td>
                         <td>{{ $attendance->created_at}}</td>
                     </tr>
                 @endforeach
