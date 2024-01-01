@@ -164,7 +164,10 @@ class RegisterController extends Controller
     public function attendanceTable()
     {
         $attendance = Attendance::with('user')->get(); // Assuming you have a relationship defined in the Attendance model
-
+        $attendance->each(function ($entry) {
+            $entry->user->modified_id = "PR-" . $entry->user->id;
+        });
+        
         return view('frontendlayouts.registers.attendance_table', compact('attendance'));
     }
 

@@ -82,7 +82,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration}}</td>
                                                 <td>{{ $entry->user->first_name}}</td>
-                                                <td>{{ $entry->user->id}}</td>
+                                                <td>{{ $entry->user->modified_id}}</td>
                                                 <td>{{ $entry->created_at}}</td>
 
                                             </tr>
