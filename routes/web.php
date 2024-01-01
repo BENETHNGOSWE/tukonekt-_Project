@@ -59,6 +59,7 @@ Route::group(['middleware' => 'guest'], function() {
     Route::get('exportview', [App\Http\Controllers\Register\RegisterController::class, 'export_view'])->name('export_view.registers');
     Route::post('logout', [App\Http\Controllers\Auth\RegisterauthController::class, 'logout'])->name('logout.registers');
     Route::get('pdf', [App\Http\Controllers\Register\RegisterController::class,'pdf_generate'])->name('pdf.registers');
+    Route::get('attendancepdf', [App\Http\Controllers\Register\RegisterController::class,'pdf_generate_attendance'])->name('pdf.attendancepdf');
     Route::delete('delete/{register}', [\App\Http\Controllers\Dashboard\DashboardController::class, 'delete'])->name('delete.registers');
 
     Route::get('form-builder', [FormBuilderController::class, 'index']);

@@ -16,7 +16,7 @@
                     <div>
 
                         <!-- card  -->
-                        <div class="card">
+                        <div class="card"><br>
                             <!-- card header  -->
                             <!-- <div class="card-header ">
                                 <h4 class="mb-0">List of Registered</h4><br>
@@ -57,6 +57,14 @@
                                 </span>
                             </div> -->
                             <!-- table  -->
+                            <span style="display: block; text-align: right;">
+                                    <a href="{{ route('export.registers')}}" class="btn btn-outline-primary">
+                                        <i data-feather="file-text" class="text-info"></i>excel
+                                    </a>
+                                    <a href="{{ route('pdf.attendancepdf')}}" class="btn btn-outline-success">
+                                        <i data-feather="file-text" class="text-info"></i>pdf
+                                    </a>
+                                </span>
 
                             <div class="card-body">
                                 <div class="table-responsive table-card">

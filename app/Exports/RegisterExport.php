@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\Register;
+use App\Models\Attendance;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class RegisterExport implements FromCollection
@@ -12,6 +12,16 @@ class RegisterExport implements FromCollection
     */
     public function collection()
     {
-        return Register::select('first_name', 'last_name', 'phone_number')->get();
+        return Attendance::all();
+    }
+
+    public function headings(): array
+    {
+        return [
+            'S/n',
+            'User ID',
+            'User Name',
+            'Attendance Time',
+        ];
     }
 }

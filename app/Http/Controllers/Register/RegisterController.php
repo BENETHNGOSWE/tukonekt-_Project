@@ -26,6 +26,7 @@ class RegisterController extends Controller
 
     public function __construct(){
         $this->data['registers']= Register::all();
+        $this->data['attendances']=Attendance::all();
     }
 
     public function pdf_generate(){
@@ -33,6 +34,11 @@ class RegisterController extends Controller
         $pdf = Pdf::loadView('frontendlayouts.registers.pdf', $this->data);
         return $pdf->download('evalution.pdf');
         
+    }
+
+    public function pdf_generate_attendance(){
+        $pdf = Pdf::loadView('frontendlayouts.registers.attendancepdf', $this->data);
+        return $pdf->download('attendance.pdf');
     }
 
     public function index(){
@@ -131,12 +137,14 @@ class RegisterController extends Controller
     
 
     public function export(){
-        return Excel::download(new RegisterExport(), fileName:'register.xlsx');
+        return Excel::download(new RegisterExport(), fileName:'attendances.xlsx');
     }
 
     public function export_view(){
         return Excel::download(new RegisterExportView(), fileName:'register.xlsx');
     }
+
+
 
 
     public function userProfile(Request $request, $id)
