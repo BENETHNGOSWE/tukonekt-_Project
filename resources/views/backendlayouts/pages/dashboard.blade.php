@@ -171,7 +171,7 @@
                             <!-- card body  -->
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <div>
-                                    <h4 class="mb-0">Gender Ratio </h4>
+                                    <h4 class="mb-0">Registers Vs Attendee </h4>
                                 </div>
                             </div>
                             <div class="card-body">
