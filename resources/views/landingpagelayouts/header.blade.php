@@ -16,14 +16,17 @@
 						<nav class="navigation">
 							<ul>
 								@if(!$forms->isEmpty())
-								<li><a href="{{ URL('read-form-builder', $forms[0]->id) }}">Register</a></li>
+									@foreach($forms as $form)
+										@if($form->selected)
+											<li><a href="{{ URL('read-form-builder', $form) }}">Register</a></li>
+										@endif
+									@endforeach
 								@else
-								<li><a href="{{ route('home')}}">Home</a></li>
+									<li><a href="{{ route('home')}}">Home</a></li>
 								@endif
 							</ul>
-
-							</ul>
 						</nav>
+
 					</div>
 				</div>
 			</div>

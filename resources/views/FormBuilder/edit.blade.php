@@ -1,62 +1,64 @@
-@extends('layouts.app')
-@section('head')
-    <title>Tukonekt Dashboard</title>
-@endsection
-
+@extends('backendlayouts.main')
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" class="form-control" />
-            <div id="fb-editor"></div>
+<main id="main-wrapper" class="main-wrapper">
+    @include('backendlayouts.sidebar')
+    <div id="app-content" style="margin-right: 1em">
+        <div class="app-content-area">
+            <div class="bg-primary pt-10 pb-21 mt-n6 mx-n4"></div>
+            <div class="container-fluid mt-n22 ">
+                <div class="row">
+                    <div>
+                        <div class="card">
+                            <div class="card-body">
+                                <form method="POST" action="{{ route('update-form', $form->id) }}">
+                                    @csrf
+                                    @method('PUT')
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" class="form-control" value="{{ $form->name }}" /><br>
+                                    <label for="selected">Selected</label>
+                                    <input type="checkbox" id="selected" name="selected" value="{{ $form->selected ? 'checked' : '' }}" /><br><br>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</main>
+
 @endsection
 @section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="{{ URL::asset('assets/form-builder/form-builder.min.js') }}"></script>
-    <script>
-        var fbEditor = document.getElementById('fb-editor');
-        var formBuilder = $(fbEditor).formBuilder({
-            onSave: function(evt, formData) {
-                saveForm(formData);
-            },
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script src="{{ URL::asset('assets/form-builder/form-builder.min.js') }}"></script>
+<script>
+    jQuery(function($) {
+        var formBuilder = $(document.getElementById('fb-editor')).formBuilder({
+            formData: '{{ $form->form_data }}'
         });
-
-        $(function() {
-            $.ajax({
-                type: 'get',
-                headers: {
-                    'Authorization': 'Bearer ' + localStorage.getItem('token')
-                },
-                url: '{{ URL('get-form-builder-edit') }}',
-                data: {
-                    'id': '{{ $id }}'
-                },
-                success: function(data) {
-                    $("#name").val(data.name);
-                    formBuilder.actions.setData(data.content);
-                }
-            });
-        });
-
-        function saveForm(form) {
+        $('form').on('submit', function(e) {
+            e.preventDefault();
+            var formData = formBuilder.actions.getData();
             $.ajax({
                 type: 'post',
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token')
                 },
-                url: '{{ URL('update-form-builder') }}',
+                url: $(this).attr('action'),
                 data: {
-                    'form': form,
+                    'form': formData,
                     'name': $("#name").val(),
-                    'id': {{ $id }},
+                    'selected': $("#selected").is(":checked"),
                     "_token": "{{ csrf_token() }}",
                 },
                 success: function(data) {
                     location.href = "/form-builder";
+                    console.log(data);
                 }
             });
-        }
-    </script>
+        });
+    });
+</script>
 @endsection

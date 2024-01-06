@@ -47,46 +47,55 @@ Route::get('qrcode/{token}', [QRCodeController::class, 'show']);
 Route::get('/attendance-table', [App\Http\Controllers\Register\RegisterController::class, 'attendanceTable'])->name('attendance.table');
 
 
-Route::group(['middleware' => 'guest'], function() {
-   
+Route::group(['middleware' => 'guest'], function () {
 });
 
-    Route::group(['middleware'=> 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('dashboard', [App\Http\Controllers\Dashboard\DashboardController::class, 'indexdashboard'])->name('dashboard');
     Route::get('alllist', [App\Http\Controllers\Dashboard\DashboardController::class, 'index_list'])->name('list.dashboard');
     Route::get('export', [App\Http\Controllers\Register\RegisterController::class, 'export'])->name('export.registers');
     Route::get('exportview', [App\Http\Controllers\Register\RegisterController::class, 'export_view'])->name('export_view.registers');
     Route::post('logout', [App\Http\Controllers\Auth\RegisterauthController::class, 'logout'])->name('logout.registers');
-    Route::get('pdf', [App\Http\Controllers\Register\RegisterController::class,'pdf_generate'])->name('pdf.registers');
-    Route::get('attendancepdf', [App\Http\Controllers\Register\RegisterController::class,'pdf_generate_attendance'])->name('pdf.attendancepdf');
+    Route::get('pdf', [App\Http\Controllers\Register\RegisterController::class, 'pdf_generate'])->name('pdf.registers');
+    Route::get('attendancepdf', [App\Http\Controllers\Register\RegisterController::class, 'pdf_generate_attendance'])->name('pdf.attendancepdf');
     Route::delete('delete/{register}', [\App\Http\Controllers\Dashboard\DashboardController::class, 'delete'])->name('delete.registers');
 
-    Route::get('form-builder', [FormBuilderController::class, 'index']);
-    // Step 2
-    Route::view('formbuilder', 'FormBuilder.create');
-    // Step 3
-    Route::post('save-form-builder', [FormBuilderController::class, 'create']);
-    // Step 4
-    Route::delete('form-delete/{id}', [FormBuilderController::class, 'destroy']);
-    // Step 5
-    Route::view('edit-form-builder/{id}', 'FormBuilder.edit');
-    Route::get('get-form-builder-edit', [FormBuilderController::class, 'editData']);
-    Route::post('update-form-builder', [FormBuilderController::class, 'update']);
 
-    // Step 6
+
+    // Form Edit Selected Status Only 
+    Route::get('edit-form-builder/{id}', [FormBuilderController::class, 'edit'])->name('selected_status_update');
+    Route::get('get-form-builder-edit', [FormBuilderController::class, 'edit']);
+    Route::post('update-form-builder', [FormBuilderController::class, 'update']);
+    
+
+
+    // Route::get('/edit-form/{id}', [FormBuilderController::class, 'edit'])->name('edit-form');
+    Route::post('/update-form/{id}', [FormBuilderController::class, 'update'])->name('update-form');
+
+
+    // Form Edit Data Only not Selected Status
+    Route::get('get-form-data-only', [FormBuilderController::class, 'editData']);
+    Route::post('update-form-data-only', [FormBuilderController::class,'updateData']);
+    Route::view('edit-form-data-only/{id}', 'FormBuilder.editform');
+
+    // Form Routes
+    Route::get('form-builder', [FormBuilderController::class, 'index']);
+    Route::view('formbuilder', 'FormBuilder.create');
+    Route::post('save-form-builder', [FormBuilderController::class, 'create']);
+    Route::delete('form-delete/{id}', [FormBuilderController::class, 'destroy']);
 
     // display all form data
     Route::get('/form-data', [FormsController::class, 'displayFormData']);
 
     // filter name by date
-    Route::get('/filterdata', [App\Http\Controllers\Dashboard\DashboardController::class,'filterdata'])->name('filterdata.dashboard');
-    Route::get('/chartdata', [App\Http\Controllers\Dashboard\DashboardController::class,'chartdata'])->name('chartdata.dashboard');
+    Route::get('/filterdata', [App\Http\Controllers\Dashboard\DashboardController::class, 'filterdata'])->name('filterdata.dashboard');
+    Route::get('/chartdata', [App\Http\Controllers\Dashboard\DashboardController::class, 'chartdata'])->name('chartdata.dashboard');
 
-    Route::get('pdfform', [FormsController::class,'pdf_form'])->name('pdf.formbuilder');
+    Route::get('pdfform', [FormsController::class, 'pdf_form'])->name('pdf.formbuilder');
 
 
-    
+    Route::post('/select', [FormBuilderController::class, 'selectForm'])->name('select-form');
+    Route::get('/display-form', [FormBuilderController::class, 'displayForm'])->name('display-form');
 
 });
-

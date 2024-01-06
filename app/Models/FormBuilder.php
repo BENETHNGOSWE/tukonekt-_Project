@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class FormBuilder extends Model
 {
     use HasFactory;
+    protected $table = 'form_builders';
     protected $casts = [
-        'content' => 'array'
+        'content' => 'array',
+        'selected',
     ];
+
+    protected $fillable = ['selected', 'content', 'name'];
 }

@@ -55,6 +55,8 @@ class FormsController extends Controller
         return redirect()->route("home")->with("success","Successfully Registered");
     }
 
+    
+
     public function displayFormData()
     {
         $formData = Forms::all(); // Retrieve all form data from the database
