@@ -17,7 +17,6 @@ class FormBuilderController extends Controller
     }
     public function index()
     {
-        // $formsd = FormBuilder::all();
         return view('FormBuilder.index', $this->data);
     }
 

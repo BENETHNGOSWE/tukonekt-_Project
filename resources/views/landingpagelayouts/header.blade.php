@@ -15,6 +15,7 @@
 					<div class="col-md-9 nav-bg">
 						<nav class="navigation">
 							<ul>
+								<li><a href="{{ route('home')}}">Home</a></li>
 								@if(!$forms->isEmpty())
 									@foreach($forms as $form)
 										@if($form->selected)
@@ -24,6 +25,7 @@
 								@else
 									<li><a href="{{ route('home')}}">Home</a></li>
 								@endif
+								
 							</ul>
 						</nav>
 

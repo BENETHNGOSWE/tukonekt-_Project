@@ -162,7 +162,7 @@ class RegisterController extends Controller
         $user = Register::find($id);
 
         if (!$user) {
-            abort(404); // or handle accordingly (e.g., redirect)
+            abort(404);
         }
 
         Attendance::create(['user_id' => $user->id]);
