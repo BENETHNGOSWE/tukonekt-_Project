@@ -11,6 +11,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive table-card">
+                                    <!-- Display forms table -->
                                     <table class="table">
                                         <thead>
                                             <th>Name</th>
@@ -52,4 +53,29 @@
         </div>
     </div>
 </main>
+<!-- <script>
+    $(document).ready(function() {
+    $('.selected-checkbox').change(function() {
+        var selected = $(this).is(":checked");
+        var id = $(this).data('id');
+
+        $.ajax({
+            type: 'post',
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            },
+            url: '{{ URL('update-selected-status') }}',
+            data: {
+                'selected': selected,
+                'id': id,
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    });
+});
+
+</script> -->
 @endsection
