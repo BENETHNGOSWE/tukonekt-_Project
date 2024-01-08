@@ -43,7 +43,7 @@ class FormBuilderController extends Controller
         $form = FormBuilder::find($id);
         $form->name = $request->name;
         $form->selected = $request->selected;
-        $form->update();
+        $form->save();
         return redirect()->route('home');
     }
 
@@ -59,7 +59,7 @@ class FormBuilderController extends Controller
         $item = FormBuilder::findOrFail($request->id);
         $item->name = $request->name;
         $item->content = $request->form;
-        $item->update();
+        $item->save();
         return response()->json('updated successfully');
     }
 

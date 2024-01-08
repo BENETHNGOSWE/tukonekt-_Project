@@ -83,7 +83,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('form-builder', [FormBuilderController::class, 'index']);
     Route::view('formbuilder', 'FormBuilder.create');
     Route::post('save-form-builder', [FormBuilderController::class, 'create']);
-    Route::delete('form-delete/{id}', [FormBuilderController::class, 'destroy']);
+    // Route::delete('form-delete/{id}', [FormBuilderController::class, 'destroy']);
+    Route::delete('/form-delete/{id}', [FormBuilderController::class, 'destroy'])->name('form-delete');
+
 
     // display all form data
     Route::get('/form-data', [FormsController::class, 'displayFormData']);

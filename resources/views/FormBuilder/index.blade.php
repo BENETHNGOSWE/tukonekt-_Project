@@ -29,7 +29,7 @@
                                                 <td>
                                                     <a href="{{ URL('edit-form-data-only', $form->id) }}" class="btn btn-primary">Edit</a>
                                                     <a href="{{ URL('read-form-builder', $form->id) }}" class="btn btn-primary">Show</a>
-                                                    <form method="POST" action="{{ URL('form-delete', $form->id) }}" style="display: inline;">
+                                                    <form method="POST" action="{{ route('form-delete', $form->id) }}" style="display: inline;">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this form?')">Delete</button>
@@ -46,25 +46,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Form for selecting a form to be displayed -->
-                        <!-- <div class="card mt-4">
-                            <div class="card-body">
-                                <form method="POST" action="{{ route('update-form', $form->id) }}">
-                                    @csrf
-                                    <label for="selectForm">Select Form to Display:</label>
-                                    <select name="form_id" id="selectForm" class="form-control">
-                                        @foreach ($forms as $form)
-                                        <label for="name">Name</label>
-                                        <input type="text" id="name" name="name" class="form-control" value="{{ $form->name }}" />
-                                        <label for="selected">Selected</label>
-                                        <input type="checkbox" id="selected" name="selected" value="{{ $form->selected ? 'checked' : '' }}" />
-                                        @endforeach
-                                    </select>
-                                    <button type="submit" class="btn btn-success mt-3">Select Form</button>
-                                </form>
-
-                            </div>
-                        </div> -->
+                      
                     </div>
                 </div>
             </div>
@@ -103,7 +85,7 @@
 <script>
     jQuery(function($) {
         var formBuilder = $(document.getElementById('fb-editor')).formBuilder({
-            formData: '{{ $form->form_data }}'
+            
         });
         $('form').on('submit', function(e) {
             e.preventDefault();
