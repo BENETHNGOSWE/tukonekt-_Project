@@ -45,7 +45,7 @@
                 data: {
                     'form': form,
                     'name': $("#name").val(),
-                    'selected' : $("#selected").is(":checked") ? 1 : 0,
+                    'selected' : $("#selected").is(":checked"),
                     "_token": "{{ csrf_token() }}",
                 },
                 success: function(data) {

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->JSON('content');
-            $table->boolean('selected')->default(false);
+            $table->boolean('selected')->default(0);
             $table->timestamps();
         });
     }
