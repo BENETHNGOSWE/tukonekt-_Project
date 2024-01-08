@@ -66,12 +66,10 @@ Route::group(['middleware' => 'auth'], function () {
     // Form Edit Selected Status Only 
     Route::get('edit-form-builder/{id}', [FormBuilderController::class, 'edit'])->name('selected_status_update');
     Route::get('get-form-builder-edit', [FormBuilderController::class, 'edit']);
-    Route::post('update-form-builder', [FormBuilderController::class, 'update']);
-    
-
-
-    // Route::get('/edit-form/{id}', [FormBuilderController::class, 'edit'])->name('edit-form');
     Route::post('/update-form/{id}', [FormBuilderController::class, 'update'])->name('update-form');
+
+
+    
 
 
     // Form Edit Data Only not Selected Status
@@ -83,7 +81,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('form-builder', [FormBuilderController::class, 'index']);
     Route::view('formbuilder', 'FormBuilder.create');
     Route::post('save-form-builder', [FormBuilderController::class, 'create']);
-    // Route::delete('form-delete/{id}', [FormBuilderController::class, 'destroy']);
     Route::delete('/form-delete/{id}', [FormBuilderController::class, 'destroy'])->name('form-delete');
 
 

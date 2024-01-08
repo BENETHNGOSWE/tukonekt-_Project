@@ -85,7 +85,7 @@
 <script>
     jQuery(function($) {
         var formBuilder = $(document.getElementById('fb-editor')).formBuilder({
-            
+            formData: '{{ $form->form_data }}'
         });
         $('form').on('submit', function(e) {
             e.preventDefault();

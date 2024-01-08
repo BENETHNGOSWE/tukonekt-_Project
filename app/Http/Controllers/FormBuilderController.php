@@ -13,7 +13,6 @@ class FormBuilderController extends Controller
     public function __construct()
     {
         $this->data['forms'] = FormBuilder::all();
-        // $this->data['forms'] = FormBuilder::where('id', $request->id)->first();
     }
     public function index()
     {
@@ -76,7 +75,7 @@ class FormBuilderController extends Controller
     {
         $form = FormBuilder::findOrFail($request->id);
         $form->selected = true;
-        $form->update();
+        $form->save();
 
         return response()->json('Form selectes Updated');
     }
