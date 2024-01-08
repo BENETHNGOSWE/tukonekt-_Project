@@ -11,7 +11,6 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive table-card">
-                                    <!-- Display forms table -->
                                     <table class="table">
                                         <thead>
                                             <th>Name</th>
@@ -53,61 +52,4 @@
         </div>
     </div>
 </main>
-<!-- <script>
-    $(document).ready(function() {
-    $('.selected-checkbox').change(function() {
-        var selected = $(this).is(":checked");
-        var id = $(this).data('id');
-
-        $.ajax({
-            type: 'post',
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
-            },
-            url: '{{ URL('update-selected-status') }}',
-            data: {
-                'selected': selected,
-                'id': id,
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(data) {
-                console.log(data);
-            }
-        });
-    });
-});
-
-</script> -->
-@endsection
-@section('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-<script src="{{ URL::asset('assets/form-builder/form-builder.min.js') }}"></script>
-<script>
-    jQuery(function($) {
-        var formBuilder = $(document.getElementById('fb-editor')).formBuilder({
-            formData: '{{ $form->form_data }}'
-        });
-        $('form').on('submit', function(e) {
-            e.preventDefault();
-            var formData = formBuilder.actions.getData();
-            $.ajax({
-                type: 'post',
-                headers: {
-                    'Authorization': 'Bearer ' + localStorage.getItem('token')
-                },
-                url: $(this).attr('action'),
-                data: {
-                    'form': formData,
-                    'name': $("#name").val(),
-                    'selected': $("#selected").is(":checked"),
-                    "_token": "{{ csrf_token() }}",
-                },
-                success: function(data) {
-                    location.href = "/form-builder";
-                    console.log(data);
-                }
-            });
-        });
-    });
-</script>
 @endsection
