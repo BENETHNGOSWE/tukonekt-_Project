@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::table('attendances', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('registers')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->unsignedBigInteger('form_id')->nullable();
+            $table->foreign('form_id')->references('id')->on('form_builders');
         });
     }
 

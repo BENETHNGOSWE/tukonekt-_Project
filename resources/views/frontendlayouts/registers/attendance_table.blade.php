@@ -74,6 +74,7 @@
                                                 <th>S/n</th>
                                                 <th>User Name</th>
                                                 <th>User ID</th>
+                                                <th>Form ID</th>
                                                 <th>Attendance Time</th>
                                             </tr>
                                         </thead>
@@ -83,6 +84,7 @@
                                                 <td>{{ $loop->iteration}}</td>
                                                 <td>{{ $entry->user->first_name}}</td>
                                                 <td>{{ $entry->user->modified_id}}</td>
+                                                <td>{{ $entry->form_id}}</td>
                                                 <td>{{ $entry->created_at}}</td>
 
                                             </tr>

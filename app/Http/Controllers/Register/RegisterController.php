@@ -154,9 +154,6 @@ class RegisterController extends Controller
         return Excel::download(new RegisterExportView(), fileName:'register.xlsx');
     }
 
-
-
-
     public function userProfile(Request $request, $id)
     {
         $user = Register::find($id);
@@ -164,8 +161,13 @@ class RegisterController extends Controller
         if (!$user) {
             abort(404);
         }
+        $formId = $user->form_id;
 
-        Attendance::create(['user_id' => $user->id]);
+        Attendance::create([
+            'user_id' => $user->id,
+            'form_id' => $formId,
+        ]);
+        
         $user->modified_id = "PR-" . $user->id;
 
         return view('frontendlayouts.registers.user_profile', compact('user'));
