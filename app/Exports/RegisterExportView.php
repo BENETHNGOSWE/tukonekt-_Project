@@ -18,9 +18,21 @@ class RegisterExportView implements FromCollection, WithHeadings
 
     public function collection()
     {
-        $registers = Register::select('id','first_name', 'middlename', 'last_name', 'phone_number')->get();
+        $registers = Register::select(
+            'id',
+            'first_name',
+            'middlename',
+            'last_name', 
+            'email', 
+            'address_line_2',
+            'city', 
+            'age_group',
+            'gender',
+            'phone_number')->get();
 
-       
+       $registers->each(function ($register) {
+           $register->qr_code = qrcode('', $register->id);
+       });
 
         return $registers;
     }
@@ -32,7 +44,13 @@ class RegisterExportView implements FromCollection, WithHeadings
             'First Name',
             'Surname',
             'Last Name',
+            'Email',
+            'Address',
+            'City',
+            'Age',
+            'Gender',
             'Phone Number',
+            'Qrcode',
 
         ];
     }
