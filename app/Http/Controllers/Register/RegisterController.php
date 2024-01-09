@@ -158,7 +158,7 @@ class RegisterController extends Controller
     public function userProfile(Request $request, $id)
     {
         $user = Register::find($id);
-        dd($user);
+        
         if (!$user) {
             abort(404);
         }
