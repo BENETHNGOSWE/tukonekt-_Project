@@ -6,7 +6,7 @@ use App\Models\Register;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class RegisterExportView implements FromCollection, WithHeadings,
+class RegisterExportView implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -20,7 +20,7 @@ class RegisterExportView implements FromCollection, WithHeadings,
     {
         $registers = Register::select('id','first_name', 'middlename', 'last_name', 'phone_number')->get();
 
-     
+       
 
         return $registers;
     }
