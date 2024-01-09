@@ -158,12 +158,12 @@ class RegisterController extends Controller
     public function userProfile(Request $request, $id)
     {
         $user = Register::find($id);
-        
+
         if (!$user) {
             abort(404);
         }
         $selectedFormId = FormBuilder::where('selected', 1)->value('id');
-        dd($selectedFormId);
+        
         if($selectedFormId == null) {
             abort(404);
         }
