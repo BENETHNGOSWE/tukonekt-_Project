@@ -12,7 +12,10 @@
                                  <th scope="row">ID</th>
                                  <td>{{ $user->modified_id }}</td>
                              </tr>
-                           
+                             <tr>
+                                 <th scope="row">Form ID</th> 
+                                 <td>{{ $user->attendances->last()->form_id ?? 'N/A' }}</td>
+                             </tr>
                              <tr>
                                  <th scope="row">First Name</th>
                                  <td>{{ $user->first_name }}</td>
