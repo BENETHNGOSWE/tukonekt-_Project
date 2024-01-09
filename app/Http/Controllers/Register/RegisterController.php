@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\QRCodeMail;
 use App\Models\Register;
 use App\Models\Attendance;
+use App\Models\FormBuilder;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -161,11 +162,15 @@ class RegisterController extends Controller
         if (!$user) {
             abort(404);
         }
-        $formId = $user->form_id;
+        $selectedFormId = FormBuilder::where('selected', 1)->value('id');
+
+        if($selectedFormId == null) {
+            abort(404);
+        }
 
         Attendance::create([
             'user_id' => $user->id,
-            'form_id' => $formId
+            'form_id' => $selectedFormId
         ]);
         $user->modified_id = "PR-" . $user->id;
 

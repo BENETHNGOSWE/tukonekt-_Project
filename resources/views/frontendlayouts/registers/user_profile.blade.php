@@ -14,7 +14,7 @@
                              </tr>
                              <tr>
                                  <th scope="row">Form ID</th> <!-- Add this row for the form_id -->
-                                 <td>{{ $user->form_id }}</td>
+                                 <td>{{ $selectedFormId ->form_id }}</td>
                              </tr>
                              <tr>
                                  <th scope="row">First Name</th>
