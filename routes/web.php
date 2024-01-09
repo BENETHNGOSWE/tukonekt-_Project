@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/user-profile/{id}', [App\Http\Controllers\Register\RegisterController::class, 'userProfile'])->name('user.profile');
 
 
 
@@ -96,5 +95,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/select', [FormBuilderController::class, 'selectForm'])->name('select-form');
     Route::get('/display-form', [FormBuilderController::class, 'displayForm'])->name('display-form');
+
+    // user data after qrcode scanned
+    Route::get('/user-profile/{id}', [App\Http\Controllers\Register\RegisterController::class, 'userProfile'])->name('user.profile');
+
 
 });

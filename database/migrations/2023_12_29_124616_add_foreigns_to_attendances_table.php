@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('attendances', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('registers')->onUpdate('CASCADE')->onDelete('CASCADE');
-            $table->foreign('form_id')->references('id')->on('form_builders');
+            $table->foreign('form_id')->references('id')->on('form_builders')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -24,6 +24,7 @@ return new class extends Migration
     {
         Schema::table('attendances', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
+            $table->dropForeign(['form_id']);
         });
     }
 };

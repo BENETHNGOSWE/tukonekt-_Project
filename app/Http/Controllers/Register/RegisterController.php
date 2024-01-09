@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\QRCodeMail;
 use App\Models\Register;
 use App\Models\Attendance;
+use App\Models\FormBuilder;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -157,20 +158,23 @@ class RegisterController extends Controller
     public function userProfile(Request $request, $id)
     {
         $user = Register::find($id);
+        $form = FormBuilder::find($id);
 
-        if (!$user) {
+        if (!$user || !$form) {
             abort(404);
         }
-        $formId = $user->form_id;
+        
 
         Attendance::create([
             'user_id' => $user->id,
-            'form_id' => $formId,
+            'form_id' => $form->id,
         ]);
-        
-        $user->modified_id = "PR-" . $user->id;
 
-        return view('frontendlayouts.registers.user_profile', compact('user'));
+        $user->modified_id = "PR-" . $user->id;
+        $form->modified_id = "FN-" . $form->id;
+
+
+        return view('frontendlayouts.registers.user_profile', compact('user', 'form'));
     }
 
     public function attendanceTable()

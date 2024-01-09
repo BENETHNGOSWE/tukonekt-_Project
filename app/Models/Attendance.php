@@ -8,11 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Attendance extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id'];
+    protected $fillable = ['user_id', 'form_id'];
 
     public function user()
     {
         return $this->belongsTo(Register::class);
+    }
+
+    public function form()
+    {
+        return $this->belongsTo(FormBuilder::class);
     }
     
 }

@@ -86,7 +86,6 @@
                                                 <td>{{ $entry->user->modified_id}}</td>
                                                 <td>{{ $entry->form_id}}</td>
                                                 <td>{{ $entry->created_at}}</td>
-
                                             </tr>
                                             @endforeach
                                         </tbody>
