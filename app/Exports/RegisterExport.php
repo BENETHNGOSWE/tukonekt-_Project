@@ -13,7 +13,7 @@ class RegisterExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        return Attendance::with('user')->get()->map(function ($attendance) {
+        return Attendance::with('user', 'form')->get()->map(function ($attendance) {
             return [
                 'S/n' => $attendance->id,
                 'User Id' => $attendance->user->id,
@@ -23,6 +23,7 @@ class RegisterExport implements FromCollection, WithHeadings
                 'Email' => $attendance->user->email,
                 'Gender' => $attendance->user->gender,
                 'Age'=> $attendance->user->age_group,
+                'Form Name' => $attendance->form->name,
                 'Attendance Time' => $attendance->created_at,
             ];
         });
@@ -39,6 +40,7 @@ class RegisterExport implements FromCollection, WithHeadings
             'Email',
             'Gender',
             'Age',
+            'Form Name',
             'Attendance Time',
         ];
     }
