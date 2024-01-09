@@ -13,7 +13,14 @@ class RegisterExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        return Attendance::with('user')->get();
+        return Attendance::with('user')->get()->map(function ($attendance) {
+            return [
+                'S/n' => $attendance->id,
+                'User Id' => $attendance->user->id,
+                'User Name' => $attendance->user->first_name,
+                'Attendance Time' => $attendance->created_at,
+            ];
+        });
     }
 
     public function headings(): array
