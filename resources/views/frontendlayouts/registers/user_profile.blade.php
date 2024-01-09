@@ -14,7 +14,7 @@
                              </tr>
                              <tr>
                                  <th scope="row">Form ID</th> <!-- Add this row for the form_id -->
-                                 <td>{{ $selectedFormId ->form_id }}</td>
+                                 <td>{{ $user->attendances->last()->form_id ?? 'N/A' }}</td>
                              </tr>
                              <tr>
                                  <th scope="row">First Name</th>

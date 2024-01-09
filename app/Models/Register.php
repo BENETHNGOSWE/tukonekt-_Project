@@ -21,4 +21,8 @@ class Register extends Model
         'email_verified',
      
     ];
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class, 'user_id');
+    }
 }
