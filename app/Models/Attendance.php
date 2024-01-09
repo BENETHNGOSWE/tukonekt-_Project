@@ -12,7 +12,7 @@ class Attendance extends Model
 
     public function user()
     {
-        return $this->belongsTo(Register::class);
+        return $this->belongsTo(Register::class, 'user_id');
     }
 
     public function form()
