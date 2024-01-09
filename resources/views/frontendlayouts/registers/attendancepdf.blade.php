@@ -28,6 +28,7 @@
                     <th>S/n</th>
                     <th>User Name	</th>
                     <th>User ID</th>
+                    <th>Form ID</th>
                     <th>Time Scanned</th>
                 </tr>
             </thead>
@@ -37,6 +38,7 @@
                         <td>{{ $loop->iteration}}</td>
                         <td>{{ $attendance->user->first_name}}</td>
                         <td>PR-{{ $attendance->id}}</td>
+                        <td>FN-{{ $attendance->form_id}}</td>
                         <td>{{ $attendance->created_at}}</td>
                     </tr>
                 @endforeach
