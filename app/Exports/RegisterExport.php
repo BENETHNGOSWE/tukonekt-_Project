@@ -17,7 +17,12 @@ class RegisterExport implements FromCollection, WithHeadings
             return [
                 'S/n' => $attendance->id,
                 'User Id' => $attendance->user->id,
-                'User Name' => $attendance->user->first_name,
+                'First Name' => $attendance->user->first_name,
+                'Last Name' => $attendance->user->last_name,
+                'Phone Number' => $attendance->user-> phone_number,
+                'Email' => $attendance->user->email,
+                'Gender' => $attendance->user->gender,
+                'Age'=> $attendance->user->age_group,
                 'Attendance Time' => $attendance->created_at,
             ];
         });
@@ -28,7 +33,12 @@ class RegisterExport implements FromCollection, WithHeadings
         return [
             'S/n',
             'User ID',
-            'User Name',
+            'First Name',
+            'Last Name',
+            'Phone Number',
+            'Email',
+            'Gender',
+            'Age',
             'Attendance Time',
         ];
     }
