@@ -163,7 +163,7 @@ class RegisterController extends Controller
             abort(404);
         }
         $selectedFormId = FormBuilder::where('selected', 1)->value('id');
-        
+
         if($selectedFormId == null) {
             abort(404);
         }
@@ -179,7 +179,7 @@ class RegisterController extends Controller
 
     public function attendanceTable()
     {
-        $attendance = Attendance::with('user')->get(); // Assuming you have a relationship defined in the Attendance model
+        $attendance = Attendance::with('user')->get(); 
         $attendance->each(function ($entry) {
             $entry->user->modified_id = "PR-" . $entry->user->id;
         });
