@@ -45,9 +45,16 @@ class RegisterController extends Controller
             // Access the related User model
             $user = User::find($attendance->user_id);
     
-            // Add a modified_id to the data with the prefix "PR-"
-            $attendance->modified_id = "PR-" . $user->id;
+            // Check if $user is not null before accessing its properties
+            if ($user) {
+                // Add a modified_id to the data with the prefix "PR-"
+                $attendance->modified_id = "PR-" . $user->id;
+            } else {
+                // Handle the case where $user is null (optional)
+                $attendance->modified_id = "N/A"; // or any other appropriate value
+            }
         }
+        
         $pdf = Pdf::loadView('frontendlayouts.registers.attendancepdf', $this->data);
         return $pdf->download('attendance.pdf');
     }
