@@ -4,8 +4,9 @@ namespace App\Exports;
 
 use App\Models\Register;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class RegisterExportView implements FromCollection
+class RegisterExportView implements FromCollection, WithHeadings,
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -17,13 +18,22 @@ class RegisterExportView implements FromCollection
 
     public function collection()
     {
-        $registers = Register::select('id','first_name', 'last_name', 'phone_number')->get();
+        $registers = Register::select('id','first_name', 'middlename', 'last_name', 'phone_number')->get();
 
-        // Add a new attribute for the QR code
-        $registers->each(function ($register) {
-            $register->qr_code = qrcode('', $register->id);
-        });
+     
 
         return $registers;
+    }
+
+    public function headings(): array 
+    {
+        return [
+            'User Id',
+            'First Name',
+            'Surname',
+            'Last Name',
+            'Phone Number',
+
+        ];
     }
 }
